@@ -15,12 +15,6 @@ set cursorline
 set backupdir=$VIMRUNTIME/temp/
 set directory=$VIMRUNTIME/temp/
 
-set gfn=Consolas:h9:cANSI
-set guioptions-=T
-set guioptions-=r
-set guioptions-=l
-set guioptions-=L
-set guioptions-=b
 noremap <Left> :bp!<CR>
 noremap <Right> :bn!<CR>
 imap jj <Esc>
