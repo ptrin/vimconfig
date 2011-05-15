@@ -5,6 +5,7 @@ call pathogen#helptags()
 filetype plugin indent on
 
 set autochdir
+set hidden
 set incsearch
 set nobackup
 set nowritebackup
