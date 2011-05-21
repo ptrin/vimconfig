@@ -4,6 +4,9 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on
 
+au InsertEnter * :set isk+=-
+au InsertLeave * :set isk-=- 
+
 set autochdir
 set hidden
 set incsearch
