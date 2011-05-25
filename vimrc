@@ -19,6 +19,8 @@ set cursorline
 set backupdir=$VIMRUNTIME/temp/
 set directory=$VIMRUNTIME/temp/
 
+noremap <C-TAB> :tabnext<CR>
+noremap <C-S-TAB> :tabprev<CR>
 noremap <Left> :bp!<CR>
 noremap <Right> :bn!<CR>
 imap jj <Esc>
