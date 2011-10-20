@@ -28,3 +28,6 @@
 [submodule "bundle/zencoding"]
 	path = bundle/zencoding
 	url = https://github.com/vim-scripts/ZenCoding.vim.git
+[submodule "bundle/fuzzyfinder"]
+	path = bundle/fuzzyfinder
+	url = https://github.com/vim-scripts/FuzzyFinder.git
