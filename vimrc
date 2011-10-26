@@ -1,11 +1,16 @@
 set nocompatible
+set viminfo=%,'100,<50,s10,h
 filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on
 
+let g:user_zen_leader_key = '<c-k>'
+
 au InsertEnter * :set isk+=-
 au InsertLeave * :set isk-=- 
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
 
 set autochdir
 set hidden
@@ -27,6 +32,7 @@ imap jj <Esc>
 set ic
 map <F1> :NERDTreeToggle<CR>
 command W :w
+command Bdall :bufdo bd
 map ,cd :cd %:p:h<CR>
 set nowrap
 set number
