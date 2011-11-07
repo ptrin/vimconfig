@@ -22,6 +22,8 @@ set noswapfile
 set noeb
 colorscheme desert
 set cursorline
+au WinEnter * :setlocal cursorline
+au WinLeave * :setlocal nocursorline
 set backupdir=$VIMRUNTIME/temp/
 set directory=$VIMRUNTIME/temp/
 
