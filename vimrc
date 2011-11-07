@@ -7,10 +7,11 @@ filetype plugin indent on
 
 let g:user_zen_leader_key = '<c-k>'
 
-au InsertEnter * :set isk+=-
-au InsertLeave * :set isk-=- 
+au InsertEnter * set isk+=-
+au InsertLeave * set isk-=- 
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
+
 
 set autochdir
 set hidden
@@ -36,6 +37,8 @@ command Bdall :bufdo bd
 map ,cd :cd %:p:h<CR>
 set nowrap
 set number
+au WinEnter * :setlocal number
+au WinLeave * :setlocal nonumber
 set smartindent
 set lines=200
 set columns=120
