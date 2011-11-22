@@ -20,7 +20,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set noeb
-colorscheme desert
+colorscheme zenburn
 set cursorline
 au WinEnter * :setlocal cursorline
 au WinLeave * :setlocal nocursorline
