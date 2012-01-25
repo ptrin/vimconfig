@@ -41,7 +41,7 @@ set nowrap
 set number
 au WinEnter * :setlocal number
 au WinLeave * :setlocal nonumber
-set smartindent
+"set smartindent
 set lines=200
 set columns=120
 set tabstop=4
@@ -52,3 +52,8 @@ set softtabstop=4
 nmap ,f :FufFileWithCurrentBufferDir<CR>
 nmap ,b :FufBuffer<CR>
 nmap ,t :FufTaggedFile<CR>
+
+nnoremap ,jc :JumpToCSS<CR>
+let g:jumptocss_autoclose = 1
+
+

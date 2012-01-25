@@ -7,9 +7,6 @@
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/vim-scripts/surround.vim.git
-[submodule "bundle/autoclose"]
-	path = bundle/autoclose
-	url = https://github.com/vim-scripts/AutoClose.git
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = https://github.com/mhz/vim-matchit.git
@@ -37,3 +34,12 @@
 [submodule "bundle/MatchTag"]
 	path = bundle/MatchTag
 	url = https://github.com/gregsexton/MatchTag.git
+[submodule "bundle/JavaScript-Omni-Completion"]
+	path = bundle/JavaScript-Omni-Completion
+	url = https://github.com/vim-scripts/Javascript-OmniCompletion-with-YUI-and-j.git
+[submodule "bundle/Better-Javascript-Indentation"]
+	path = bundle/Better-Javascript-Indentation
+	url = https://github.com/vim-scripts/Better-Javascript-Indentation.git
+[submodule "bundle/delimitMate"]
+	path = bundle/delimitMate
+	url = https://github.com/vim-scripts/delimitMate.vim.git
