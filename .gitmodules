@@ -40,9 +40,6 @@
 [submodule "bundle/Better-Javascript-Indentation"]
 	path = bundle/Better-Javascript-Indentation
 	url = https://github.com/vim-scripts/Better-Javascript-Indentation.git
-[submodule "bundle/delimitMate"]
-	path = bundle/delimitMate
-	url = https://github.com/vim-scripts/delimitMate.vim.git
 [submodule "bundle/JumpToCSS"]
 	path = bundle/JumpToCSS
 	url = https://ptrin@github.com/ptrin/JumpToCSS.git
@@ -52,3 +49,6 @@
 [submodule "bundle/jshint.vim"]
 	path = bundle/jshint.vim
 	url = https://github.com/walm/jshint.vim.git
+[submodule "bundle/vim-autoclose"]
+	path = bundle/vim-autoclose
+	url = https://github.com/andrewle/vim-autoclose.git
