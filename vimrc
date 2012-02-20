@@ -7,6 +7,7 @@ filetype plugin indent on
 
 let g:snippets_dir = "~/.vim/snippets"
 let g:user_zen_leader_key = '<c-k>'
+let g:jshintprg = "/usr/local/bin/jshint"
 
 au InsertEnter * set isk+=-
 au InsertLeave * set isk-=- 
@@ -57,21 +58,3 @@ nmap ,t :FufTaggedFile<CR>
 
 nnoremap ,jc :JumpToCSS<CR>
 let g:jumptocss_autoclose = 1
-
-inoremap <expr> <BS> g:ClosePairs()
- 
-function! g:ClosePairs()
-    echom "g:ClosePairs() called"
-    let pair = strpart(getline('.'), col('.') - 2, 2)
-    echom "pair:"
-    echom pair
-    let pair_is_closed = pair == '()' || pair == "''" || pair == '[]' || pair == '""' || pair == '{}'
- 
-    if pair_is_closed
-        " should go one character forward and backspace 2 times
-        return "\<Right>\<BS>\<BS>"
-    else
-        " should only backspace
-        return "\<BS>"
-    endif
-endfunction
