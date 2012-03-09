@@ -196,4 +196,10 @@ snippet table
 	</table>${4}
 snippet textarea
 	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
+snippet var
+	{{ ${1} }}
+snippet tvar
+	{{ page.copy.${1}.en | t: page.copy.${1}.fr }}
+snippet tag
+	{% ${1} %}
 # vim:fdm=marker

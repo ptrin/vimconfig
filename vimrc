@@ -58,3 +58,5 @@ nmap ,t :FufTaggedFile<CR>
 
 nnoremap ,jc :JumpToCSS<CR>
 let g:jumptocss_autoclose = 1
+
+iabbrev /* /* */<Esc>hhi
