@@ -199,7 +199,7 @@ snippet textarea
 snippet var
 	{{ ${1} }}
 snippet tvar
-	{{ page.copy.${1}.en | t: page.copy.${1}.fr }}
+	{{ page.copy.${1:lang_lbl}.en | t: page.copy.$1.fr }}
 snippet tag
 	{% ${1} %}
 # vim:fdm=marker
