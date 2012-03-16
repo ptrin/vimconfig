@@ -9,108 +9,88 @@ endif
 let g:colors_name = "silent"
 set background=light
 
-hi Cursor           guibg=#0057ae	guifg=white		gui=NONE
-hi LineNr           guibg=#F1FFC1	guifg=DarkGray	gui=bold,italic 
-hi StatusLineNC     guibg=#bbbbbb	guifg=White		gui=bold,italic
-hi StatusLine       guibg=#1D343B	guifg=#DDDDDD	gui=italic
-hi Title            guibg=white		guifg=Black		gui=bold 
-hi TablineSel       guibg=white		guifg=Black		gui=bold 
-hi CursorLine       guibg=#F1FFC1	guifg=Black		gui=none
-hi CursorColumn     guibg=#fafafa	guifg=black		gui=NONE
-hi MatchParen       guifg=#141312	guibg=Yellow	gui=underline
-hi AutoHiGroup      guibg=Yellow	guifg=black
-"hi TabLineFill      guibg=red guifg=#606060 gui=none
-hi SignColumn       guibg=#F1FFC1	guifg=black		gui=bold
+hi Cursor           guifg=DarkGrey guibg=grey gui=NONE
+hi LineNr           ctermbg=DarkGrey ctermfg=LightGrey gui=bold,italic guifg=DarkGray guibg=#F1FFC1
+hi StatusLineNC     ctermbg=white  ctermfg=black guifg=White guibg=DimGray gui=bold,italic
+hi StatusLine       ctermbg=white  ctermfg=black guifg=#DDDDDD guibg=#1D343B gui=italic
+hi SpecialKey       guifg=orange gui=none
+hi Title            guifg=Black   gui=bold 
+hi CursorLine       guibg=#fafafa
+hi CursorColumn     guibg=#fafafa
+hi MatchParen       ctermbg=LightGrey guifg=#141312 guibg=Yellow gui=underline
+hi AutoHiGroup      guibg=Yellow 
 
-hi Directory	    guibg=white		guifg=Black		gui=bold,italic 
-hi Tooltip   	    guibg=#F1FFC1	guifg=DarkGray	gui=bold,italic 
-hi FoldColumn       guibg=#F1FFC1	guifg=Black		gui=none 
-hi VertSplit        guibg=#F1FFC1	guifg=#F1FFC1	gui=none 
-hi Wildmenu         guibg=White		guifg=Black		gui=bold 
+hi Directory	    ctermbg=White ctermfg=DarkGray gui=bold,italic guifg=DarkGray guibg=#F1FFC1
+hi FoldColumn       guifg=Black guibg=#F1FFC1 gui=none 
+hi VertSplit        guifg=White guibg=DimGray gui=none 
+hi Wildmenu         guifg=Black guibg=White gui=bold 
 
-hi Pmenu            guibg=#DDDDDD	guifg=Black		gui=italic
-hi PmenuSbar        guibg=#DDDDDD 	guifg=fg		gui=italic
-hi PmenuSel         guibg=#F1FFC1 	guifg=Black		gui=italic
-hi PmenuThumb       guibg=#DDDDDD 	guifg=fg		gui=none
 
-hi IncSearch        guibg=Black		guifg=White		gui=none
-hi Search           guibg=Yellow	guifg=Black		gui=none
+hi Pmenu            ctermbg=white guibg=#DDDDDD guifg=Black gui=italic
+hi PmenuSbar        ctermbg=white guibg=#DDDDDD guifg=fg gui=italic
+hi PmenuSel         ctermbg=Blue  ctermfg=white  guibg=#F1FFC1 guifg=Black gui=italic
+hi PmenuThumb       ctermbg=white ctermfg=white guibg=#DDDDDD guifg=fg gui=none
 
-hi Normal	        guibg=White		guifg=#141312	gui=NONE
-hi Visual	        guibg=#4485FF	guifg=white		gui=bold
-hi VisualNos	    guibg=#4485FF	guifg=white		gui=bold
-hi Comment	        guibg=white		guifg=#888786	gui=italic
-hi PerlPOD	        guibg=white 	guifg=#B86A18	gui=NONE
-" dark green 006e26
-hi Constant	        guibg=white		guifg=#006e26	gui=bold
+hi IncSearch        ctermbg=White     ctermfg=Yellow  gui=none guifg=White guibg=Black
+hi Search           ctermbg=DarkBlue ctermfg=white   gui=none guifg=Black guibg=Yellow
 
-hi Character	    guibg=white 	guifg=#644A9B	gui=NONE
-hi String           guibg=white 	guifg=#BF0303	gui=italic
-"hi Number			guibg=white 	guifg=black		gui=bold
-hi Number	        guibg=white 	guifg=#B07E00	gui=NONE
-hi Boolean	        guibg=white 	guifg=#B07E00	gui=NONE
-hi Define	        guibg=white 	guifg=#006E26	gui=bold
+hi Normal	        ctermfg=DarkGrey guifg=#141312 guibg=White 
+hi Visual	        ctermfg=Blue guibg=#4485FF guifg=white gui=bold
+hi Comment	        ctermfg=Brown guifg=#888786	gui=italic
+hi PerlPOD	        ctermfg=Brown guifg=#B86A18	gui=NONE
+hi Constant	        ctermfg=DarkGrey guifg=#141312 gui=bold
+hi Charachter	    ctermfg=Yellow guifg=#644A9B	gui=NONE
+hi String           ctermfg=DarkRed guifg=#BF0303	gui=italic
+hi Number	        ctermfg=DarkRed  guifg=#B07E00 gui=NONE
+hi Boolean	        ctermfg=DarkBlue guifg=#B07E00	gui=NONE
+hi Special	        ctermfg=DarkRed	guifg=#9C0D0D gui=NONE
+hi Define	        ctermfg=DarkGreen guifg=#006E26 gui=bold
 
-" vars 
-hi Identifier 	    guibg=white 	guifg=#0057AE	gui=NONE
-hi Exception 	    guibg=white 	guifg=black		gui=bold
-" return ~olive   
-hi Statement 	    guibg=white 	guifg=#B07E00	gui=NONE
-"hi Label 	        guibg=white 	guifg=#B07E00	gui=NONE
-hi PreProc	        guibg=white 	guifg=#141312	gui=bold
-hi Function	        guibg=white 	guifg=#B07E00	gui=NONE
-hi Repeat	        guibg=white 	guifg=#B07E00	gui=bold
-"$='"[
-hi Operator	        guibg=white 	guifg=#0057AE	gui=NONE
-hi Ignore	        guibg=white 	guifg=bg
-hi Folded           guibg=#F1FFC1	guifg=#101010	gui=italic
-hi Error	        guibg=#D80000 	guifg=#FFD1CC	term=reverse  gui=NONE
-hi Todo		        guibg=#AD5500 	guifg=Grey		term=standout gui=NONE
-hi Done		        guibg=Gray		guifg=#CCEEFF	term=standout gui=NONE
+" vars
+hi Identifier 	    ctermfg=DarkBlue guifg=#0057AE gui=NONE
+hi Exception 	    ctermfg=DarkBlue guifg=black gui=bold
+hi Statement 	    ctermfg=DarkBlue guifg=#B07E00 gui=NONE
+"hi Label 	        ctermfg=DarkBlue guifg=#B07E00 gui=NONE
+hi Keyword 	        ctermfg=DarkBlue guifg=#141312 gui=NONE
+hi PreProc	        ctermfg=DarkBlue guifg=#141312 gui=bold
+hi Type		        ctermfg=DarkGrey guifg=black gui=NONE
+hi Function	        ctermfg=DarkBlue guifg=#B07E00 gui=NONE
+hi Repeat	        ctermfg=DarkBlue guifg=#B07E00 gui=bold
+hi Operator	        ctermfg=DarkBlue guifg=#0057AE gui=NONE
+hi Ignore	        ctermfg=DarkBlue guifg=bg
+hi Folded           ctermbg=Grey ctermfg=White guibg=#F1FFC1 guifg=#101010 gui=italic
+hi Error	        term=reverse ctermbg=Red ctermfg=White guibg=#D80000 guifg=#FFD1CC gui=NONE
+hi Todo		        term=standout ctermbg=Yellow ctermfg=DarkGrey guifg=Grey guibg=#AD5500 gui=NONE
+hi Done		        term=standout ctermbg=Gray ctermfg=White guifg=#CCEEFF guibg=Gray gui=NONE
 
-hi SpellErrors      guibg=white		guifg=#9C0D0D gui=NONE
-hi SpellBad         guibg=white 	gui=undercurl guisp=#9C0D0D
-hi SpellCap         guibg=white 	gui=undercurl guisp=#9C0D0D
-hi SpellLocal       guibg=white 	gui=undercurl guisp=#9C0D0D
-hi SpellRare        guibg=white 	gui=undercurl guisp=#9C0D0D
+hi SpellErrors      ctermfg=DarkRed guifg=#9C0D0D gui=NONE
 
-hi MoreMsg          guibg=white		guifg=black		gui=NONE
-hi ModeMsg          guibg=white		guifg=black		gui=NONE
-hi DiffAdd          guibg=#CCFFCC	guifg=NONE		gui=NONE
-hi DiffDelete       guibg=#FFCCCC 	guifg=NONE		gui=NONE
-hi DiffChange       guibg=#F1FFC1 	guifg=NONE		gui=NONE
-hi DiffText         guibg=white		guifg=NONE		gui=NONE
+hi MoreMsg          guifg=black gui=NONE
+hi ModeMsg          guifg=black gui=NONE
+hi Title            gui=bold
+hi NonText          ctermfg=black ctermbg=white guibg=#FFFFFF guifg=black gui=NONE
+hi DiffAdd          ctermfg=white ctermbg=blue guifg=NONE guibg=#CCFFCC gui=NONE
+hi DiffDelete       ctermfg=red  ctermbg=white guifg=NONE guibg=#FFCCCC gui=NONE
+hi DiffChange       ctermfg=white ctermbg=red guifg=NONE guibg=#F1FFC1 gui=NONE
+hi DiffText         ctermfg=black ctermbg=white guibg=#ffffff guifg=NONE gui=NONE
 
-hi Question         guibg=white		guifg=black		gui=bold
-hi Conditional		guibg=white 	guifg=#B07E00	gui=NONE
-hi Include			guibg=white 	guifg=#141312 	gui=bold
-hi SpecialChar		guibg=white 	guifg=#141312 	gui=bold
-hi Underlined		guibg=white 	guifg=#0057ae 	gui=underline
-
-" -> 
-hi Structure		guibg=white 	guifg=black		gui=none
-hi Chatacter		guibg=white 	guifg=black		gui=none
-" dark red #D80000
-hi Float			guibg=#CCFFCC	guifg=blue		gui=NONE
-hi Macro			guibg=white		guifg=black		gui=bold
-" #ifdef #endif dark blue 
-hi PreCondit		guibg=white		guifg=#0057ae	gui=bold 
-hi Delimiter		guibg=white		guifg=black		gui=NONE 
-" const static
-hi StorageClass  	guibg=white		guifg=#006e26	gui=NONE 
-"type
-hi Typedef			guibg=#CCFFCC	guifg=#006e26	gui=bold
-" int char 
-hi Type		        guibg=white		guifg=black		gui=NONE 
-hi Tag				guibg=#CCFFCC	guifg=#0057AE	gui=NONE 
-hi Special	        guibg=white		guifg=black		gui=NONE
-hi SpecialKey       guibg=white		guifg=black		gui=none
-"NonText		'~' and '@' at the end of the window, characters from
-		"'showbreak' and other characters that do not really exist in
-		"the text (e.g., ">" displayed when a double-wide character
-		"doesn't fit at the end of the line).
-hi NonText          guibg=white		guifg=black		gui=none
-hi Keyword 	        guibg=white		guifg=#141312	gui=NONE
-
+hi Question         guifg=black gui=bold
+hi link String	Constant 
+hi link Character	Constant
+hi link Number		Constant
+hi link Boolean	Constant
+hi link Float		Number
+hi Conditional	ctermfg=DarkYellow guifg=#B07E00 gui=NONE
+hi Include		ctermfg=DarkGrey guifg=#141312 gui=bold
+hi link Structure	Define
+hi link Macro		PreProc
+hi link PreCondit	PreProc
+hi link StorageClass	Type
+hi link Structure	Type
+hi link Typedef		Type
+hi link Tag		Special
+hi SpecialChar	ctermfg=DarkGreen guifg=#141312 gui=bold
+hi link Delimiter	Normal
 hi link SpecialComment 	Special
 hi link Debug		Special
+
