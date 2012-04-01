@@ -34,7 +34,6 @@ noremap <C-S-TAB> :tabprev<CR>
 noremap <Left> :bp!<CR>
 noremap <Right> :bn!<CR>
 imap jj <Esc>
-imap {{ {<CR><Esc>O
 set ic
 map <F1> :NERDTreeToggle<CR>
 command W :w
