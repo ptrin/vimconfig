@@ -51,9 +51,12 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
-nmap ,f :FufFileWithCurrentBufferDir<CR>
-nmap ,b :FufBuffer<CR>
-nmap ,t :FufTaggedFile<CR>
+" CtrlP config
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_extensions = ['dir']
+nmap ,f :CtrlP<CR>
+nmap ,b :CtrlPBuffer<CR>
 
 nnoremap ,jc :JumpToCSS<CR>
 let g:jumptocss_autoclose = 1
