@@ -7,7 +7,7 @@ call pathogen#helptags()
 filetype plugin indent on
 
 let g:snippets_dir = "~/.vim/snippets"
-let g:user_zen_leader_key = '<c-k>'
+let g:user_zen_leader_key = '<c-m>'
 
 let g:ackprg="/usr/local/bin/ack -H --nocolor --nogroup --column"
 
@@ -24,7 +24,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set noeb
-colorscheme zenburn
+colorscheme oceandeep
 set cursorline
 au WinEnter * :setlocal cursorline
 au WinLeave * :setlocal nocursorline
@@ -54,6 +54,8 @@ noremap <C-TAB> :tabnext<CR>
 noremap <C-S-TAB> :tabprev<CR>
 noremap <Left> :bp!<CR>
 noremap <Right> :bn!<CR>
+noremap <C-J> <C-D>
+noremap <C-K> <C-U>
 imap jj <Esc>
 set ic
 map <F1> :NERDTreeToggle<CR>
