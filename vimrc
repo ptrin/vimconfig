@@ -76,6 +76,7 @@ set softtabstop=4
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_extensions = ['dir']
+let g:ctrlp_custom_ignore = '_site'
 nmap ,f :CtrlP<CR>
 nmap ,b :CtrlPBuffer<CR>
 
