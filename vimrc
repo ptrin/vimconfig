@@ -6,11 +6,17 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on
 
+" Ultisnips
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:user_zen_leader_key = '<c-m>'
 
+" Ack
 let g:ackprg="/usr/local/bin/ack -H --nocolor --nogroup --column"
 
+" Save views (fold state of buffers)
 au InsertEnter * set isk+=-
 au InsertLeave * set isk-=- 
 au BufWinLeave * silent! mkview
@@ -54,8 +60,6 @@ noremap <C-TAB> :tabnext<CR>
 noremap <C-S-TAB> :tabprev<CR>
 noremap <Left> :bp!<CR>
 noremap <Right> :bn!<CR>
-noremap <C-J> <C-D>
-noremap <C-K> <C-U>
 imap jj <Esc>
 set ic
 map <F1> :NERDTreeToggle<CR>
