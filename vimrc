@@ -6,7 +6,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on
 
-let g:snippets_dir = "~/.vim/snippets"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
 let g:user_zen_leader_key = '<c-m>'
 
 let g:ackprg="/usr/local/bin/ack -H --nocolor --nogroup --column"
