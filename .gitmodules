@@ -7,9 +7,6 @@
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/vim-scripts/surround.vim.git
-[submodule "bundle/matchit"]
-	path = bundle/matchit
-	url = https://github.com/mhz/vim-matchit.git
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = https://github.com/cclow/vim-bufexplorer.git
