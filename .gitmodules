@@ -67,3 +67,9 @@
 [submodule "bundle/vim-ultisnips-css"]
 	path = bundle/vim-ultisnips-css
 	url = https://github.com/rstacruz/vim-ultisnips-css.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/emmet-vim"]
+	path = bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
