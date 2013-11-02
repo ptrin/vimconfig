@@ -2,6 +2,7 @@ set nocompatible
 set viminfo=%,'100,<50,s10,h
 filetype off
 let g:jshintprg = "/usr/local/bin/jshint"
+"let g:pathogen_disabled = ["Better-CSS-Syntax-for-Vim","YouCompleteMe","gist-vim","ultisnips","webapi-vim","Better-Javascript-Indentation","ack.vim","jshint.vim","vim-css3-syntax","xml.vim","JavaScript-Omni-Completion","bufexplorer","nerdtree","vim-less","zencoding","JumpToCSS","ctrlp.vim","surround","vim-smartinput","MatchTag","fugitive","tcomment","vim-ultisnips-css"]
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on
@@ -11,7 +12,13 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:user_zen_leader_key = '<c-m>'
+
+" Emmet
+let g:user_emmet_leader_key = '<c-m>'
+
+" YouCompleteMe
+let g:ycm_key_list_select_completion = ["<C-n>","<Down>"]
+let g:ycm_key_list_previous_completion = ["<C-p>","<Up>"]
 
 " Ack
 let g:ackprg="/usr/local/bin/ack -H --nocolor --nogroup --column"
