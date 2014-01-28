@@ -1,10 +1,22 @@
 " ----------------------------------------
 " important
 " ----------------------------------------
+set nocompatible
+set viminfo=%,'100,<50,s10,h
+filetype off
+let g:jshintprg = "/usr/local/bin/jshint"
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+filetype plugin indent on
+set autochdir
+set hidden
+set noeb
 
 " ----------------------------------------
 " moving around, searching and patterns
 " ----------------------------------------
+set incsearch
+set ic
 
 " ----------------------------------------
 " tags
@@ -55,6 +67,18 @@ unlet s:windowmapnr s:wins
 " ----------------------------------------
 " GUI
 " ----------------------------------------
+set nowrap
+set number
+au WinEnter * :setlocal number
+au WinLeave * :setlocal nonumber
+colorscheme oceandeep
+set cursorline
+au WinEnter * :setlocal cursorline
+au WinLeave * :setlocal nocursorline
+set lines=200
+set lines=200
+set columns=120
+set columns=120
 
 " ----------------------------------------
 " printing
@@ -67,18 +91,30 @@ unlet s:windowmapnr s:wins
 " ----------------------------------------
 " selecting text
 " ----------------------------------------
+" Mapping gp to select last pasted text (like gv)
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " ----------------------------------------
 " editing text
 " ----------------------------------------
+au InsertEnter * set isk+=-
+au InsertLeave * set isk-=- 
 
 " ----------------------------------------
 " tabs and indenting
 " ----------------------------------------
+"set smartindent
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set softtabstop=4
 
 " ----------------------------------------
 " folding
 " ----------------------------------------
+" Save views (fold state of buffers)
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
 
 " ----------------------------------------
 " diff mode
@@ -87,14 +123,28 @@ unlet s:windowmapnr s:wins
 " ----------------------------------------
 " mapping
 " ----------------------------------------
+imap jj <Esc>
+command W :w
+noremap <C-TAB> :tabnext<CR>
+noremap <C-S-TAB> :tabprev<CR>
+noremap <Left> :bp!<CR>
+noremap <Right> :bn!<CR>
+map <F1> :NERDTreeToggle<CR>
+command Bdall :bufdo bd
+map ,cd :cd %:p:h<CR>
 
 " ----------------------------------------
 " reading and writing files
 " ----------------------------------------
+set backupdir=$VIMRUNTIME/temp/
+set directory=$VIMRUNTIME/temp/
+set nobackup
+set nowritebackup
 
 " ----------------------------------------
 " the swap file
 " ----------------------------------------
+set noswapfile
 
 " ----------------------------------------
 " command line editing
@@ -120,15 +170,6 @@ unlet s:windowmapnr s:wins
 " various
 " ----------------------------------------
 
-
-set nocompatible
-set viminfo=%,'100,<50,s10,h
-filetype off
-let g:jshintprg = "/usr/local/bin/jshint"
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-filetype plugin indent on
-
 " Ultisnips
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -141,54 +182,6 @@ let g:user_zen_leader_key = '<c-m>'
 " Ack
 let g:ackprg="/usr/local/bin/ack -H --nocolor --nogroup --column"
 
-" Save views (fold state of buffers)
-au InsertEnter * set isk+=-
-au InsertLeave * set isk-=- 
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
-
-
-set autochdir
-set hidden
-set incsearch
-set nobackup
-set nowritebackup
-set noswapfile
-set noeb
-colorscheme oceandeep
-set cursorline
-au WinEnter * :setlocal cursorline
-au WinLeave * :setlocal nocursorline
-set backupdir=$VIMRUNTIME/temp/
-set directory=$VIMRUNTIME/temp/
-
-
-
-" Mapping gp to select last pasted text (like gv)
-nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
-
-noremap <C-TAB> :tabnext<CR>
-noremap <C-S-TAB> :tabprev<CR>
-noremap <Left> :bp!<CR>
-noremap <Right> :bn!<CR>
-imap jj <Esc>
-set ic
-map <F1> :NERDTreeToggle<CR>
-command W :w
-command Bdall :bufdo bd
-map ,cd :cd %:p:h<CR>
-set nowrap
-set number
-au WinEnter * :setlocal number
-au WinLeave * :setlocal nonumber
-"set smartindent
-set lines=200
-set columns=120
-set tabstop=4
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-
 " CtrlP config
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
@@ -197,5 +190,9 @@ let g:ctrlp_custom_ignore = '_site'
 nmap ,f :CtrlP<CR>
 nmap ,b :CtrlPBuffer<CR>
 
+" JumpToCSS config
 nnoremap ,jc :JumpToCSS<CR>
 let g:jumptocss_autoclose = 1
+
+" Indent Guides configuration
+let g:indent_guides_color_change_percent = 2 
