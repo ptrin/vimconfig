@@ -1,54 +1,48 @@
+" ----------------------------------------
+" important
+" ----------------------------------------
 set nocompatible
 set viminfo=%,'100,<50,s10,h
 filetype off
 let g:jshintprg = "/usr/local/bin/jshint"
-"let g:pathogen_disabled = ["Better-CSS-Syntax-for-Vim","YouCompleteMe","gist-vim","ultisnips","webapi-vim","Better-Javascript-Indentation","ack.vim","jshint.vim","vim-css3-syntax","xml.vim","JavaScript-Omni-Completion","bufexplorer","nerdtree","vim-less","zencoding","JumpToCSS","ctrlp.vim","surround","vim-smartinput","MatchTag","fugitive","tcomment","vim-ultisnips-css"]
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on
-
-" Ultisnips
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" Emmet
-let g:user_emmet_leader_key = '<c-m>'
-
-" YouCompleteMe
-let g:ycm_key_list_select_completion = ["<C-n>","<Down>"]
-let g:ycm_key_list_previous_completion = ["<C-p>","<Up>"]
-
-" Ack
-let g:ackprg="/usr/local/bin/ack -H --nocolor --nogroup --column"
-
-" Save views (fold state of buffers)
-au InsertEnter * set isk+=-
-au InsertLeave * set isk-=- 
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
-
-
 set autochdir
 set hidden
-set incsearch
-set nobackup
-set nowritebackup
-set noswapfile
 set noeb
-colorscheme oceandeep
-set cursorline
-au WinEnter * :setlocal cursorline
-au WinLeave * :setlocal nocursorline
-set backupdir=$VIMRUNTIME/temp/
-set directory=$VIMRUNTIME/temp/
+
+" ----------------------------------------
+" moving around, searching and patterns
+" ----------------------------------------
+set incsearch
+set ic
+
+" ----------------------------------------
+" tags
+" ----------------------------------------
+
+" ----------------------------------------
+" displaying text
+" ----------------------------------------
+
+" ----------------------------------------
+" syntax, highlighting and spelling
+" ----------------------------------------
+
+" ----------------------------------------
+" multiple windows
+" ----------------------------------------
 
 " Switch windows with ctrl + hjkl
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" ----------------------------------------
+" multiple tab pages
+" ----------------------------------------
 
 " Meta+1-0 jumps to tab 1-10, Shift+Meta+1-0 jumps to tab 11-20:
 let s:windowmapnr = 0
@@ -62,28 +56,131 @@ while (s:windowmapnr < strlen(s:wins))
 endwhile
 unlet s:windowmapnr s:wins
 
+" ----------------------------------------
+" terminal
+" ----------------------------------------
 
-noremap <C-TAB> :tabnext<CR>
-noremap <C-S-TAB> :tabprev<CR>
-noremap <Left> :bp!<CR>
-noremap <Right> :bn!<CR>
-imap jj <Esc>
-set ic
-map <F1> :NERDTreeToggle<CR>
-command W :w
-command Bdall :bufdo bd
-map ,cd :cd %:p:h<CR>
+" ----------------------------------------
+" using the mouse
+" ----------------------------------------
+
+" ----------------------------------------
+" GUI
+" ----------------------------------------
 set nowrap
 set number
 au WinEnter * :setlocal number
 au WinLeave * :setlocal nonumber
-"set smartindent
+colorscheme oceandeep
+set cursorline
+au WinEnter * :setlocal cursorline
+au WinLeave * :setlocal nocursorline
+set lines=200
 set lines=200
 set columns=120
+set columns=120
+
+" ----------------------------------------
+" printing
+" ----------------------------------------
+
+" ----------------------------------------
+" messages and info
+" ----------------------------------------
+
+" ----------------------------------------
+" selecting text
+" ----------------------------------------
+" Mapping gp to select last pasted text (like gv)
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+" ----------------------------------------
+" editing text
+" ----------------------------------------
+au InsertEnter * set isk+=-
+au InsertLeave * set isk-=- 
+
+" ----------------------------------------
+" tabs and indenting
+" ----------------------------------------
+"set smartindent
 set tabstop=4
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+
+" ----------------------------------------
+" folding
+" ----------------------------------------
+" Save views (fold state of buffers)
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
+
+" ----------------------------------------
+" diff mode
+" ----------------------------------------
+
+" ----------------------------------------
+" mapping
+" ----------------------------------------
+imap jj <Esc>
+command W :w
+noremap <C-TAB> :tabnext<CR>
+noremap <C-S-TAB> :tabprev<CR>
+noremap <Left> :bp!<CR>
+noremap <Right> :bn!<CR>
+map <F1> :NERDTreeToggle<CR>
+command Bdall :bufdo bd
+map ,cd :cd %:p:h<CR>
+
+" ----------------------------------------
+" reading and writing files
+" ----------------------------------------
+set backupdir=$VIMRUNTIME/temp/
+set directory=$VIMRUNTIME/temp/
+set nobackup
+set nowritebackup
+
+" ----------------------------------------
+" the swap file
+" ----------------------------------------
+set noswapfile
+
+" ----------------------------------------
+" command line editing
+" ----------------------------------------
+
+" ----------------------------------------
+" executing external commands
+" ----------------------------------------
+
+" ----------------------------------------
+" running make and jumping to errors
+" ----------------------------------------
+
+" ----------------------------------------
+" language specific
+" ----------------------------------------
+
+" ----------------------------------------
+" multi-byte characters
+" ----------------------------------------
+
+" ----------------------------------------
+" various
+" ----------------------------------------
+
+" Ultisnips
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" Zen coding
+let g:user_zen_leader_key = '<c-m>'
+
+" Ack
+let g:ackprg="/usr/local/bin/ack -H --nocolor --nogroup --column"
 
 " CtrlP config
 let g:ctrlp_match_window_bottom = 0
@@ -93,5 +190,9 @@ let g:ctrlp_custom_ignore = '_site'
 nmap ,f :CtrlP<CR>
 nmap ,b :CtrlPBuffer<CR>
 
+" JumpToCSS config
 nnoremap ,jc :JumpToCSS<CR>
 let g:jumptocss_autoclose = 1
+
+" Indent Guides configuration
+let g:indent_guides_color_change_percent = 2 
