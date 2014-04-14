@@ -4,9 +4,41 @@
 set nocompatible
 set viminfo=%,'100,<50,s10,h
 filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" alternatively, pass a path where Vundle should install plugins
+"let path = '~/some/path/here'
+"call vundle#rc(path)
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/vundle'
+
+Plugin 'Raimondi/delimitMate'
+Plugin 'tcomment'
+Plugin 'JavaScript-Omni-Completion'
+Plugin 'ultisnips'
+Plugin 'ptrin/JumpToCSS'
+Plugin 'matchit.zip'
+Plugin 'vim-css3-syntax'
+Plugin 'ack.vim'
+Plugin 'vim-indent-guides'
+Plugin 'ctrlp.vim'
+Plugin 'vim-less'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Emmet.vim'
+Plugin 'gist-vim'
+Plugin 'vim-ultisnips-css'
+Plugin 'jshint.vim'
+Plugin 'nerdtree'
+Plugin 'webapi-vim'
+Plugin 'surround'
+Plugin 'xml.vim'
+
 let g:jshintprg = "/usr/local/bin/jshint"
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" call pathogen#runtime_append_all_bundles()
+" call pathogen#helptags()
 filetype plugin indent on
 set autochdir
 set hidden
@@ -177,7 +209,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Zen coding
-let g:user_zen_leader_key = '<c-m>'
+let g:user_emmet_leader_key = '<c-m>'
 
 " Ack
 let g:ackprg="/usr/local/bin/ack -H --nocolor --nogroup --column"
@@ -189,6 +221,21 @@ let g:ctrlp_extensions = ['dir']
 let g:ctrlp_custom_ignore = '_site'
 nmap ,f :CtrlP<CR>
 nmap ,b :CtrlPBuffer<CR>
+
+" Source: https://github.com/kien/ctrlp.vim/issues/280
+let g:ctrlp_buffer_func = { 'enter': 'MyCtrlPMappings' }
+
+func! MyCtrlPMappings()
+    nnoremap <buffer> <silent> <c-@> :call <sid>DeleteBuffer()<cr>
+endfunc
+
+func! s:DeleteBuffer()
+    let line = getline('.')
+    let bufid = line =~ '\[\d\+\*No Name\]$' ? str2nr(matchstr(line, '\d\+'))
+        \ : fnamemodify(line[2:], ':p')
+    exec "bd" bufid
+    exec "norm \<F5>"
+endfunc
 
 " JumpToCSS config
 nnoremap ,jc :JumpToCSS<CR>
