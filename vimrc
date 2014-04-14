@@ -18,6 +18,7 @@ Plugin 'gmarik/vundle'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tcomment'
 Plugin 'SirVer/ultisnips'
+Plugin 'aalvarado/ultisnips-snippets'
 Plugin 'rstacruz/vim-ultisnips-css'
 Plugin 'ptrin/JumpToCSS'
 Plugin 'matchit.zip'
@@ -202,7 +203,7 @@ set noswapfile
 " ----------------------------------------
 
 " Ultisnips
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "user-snippets"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "user-snippets", "ultisnips-snippets"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
