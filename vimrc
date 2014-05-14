@@ -15,8 +15,8 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
 
-Plugin 'Raimondi/delimitMate'
-Plugin 'tomtom/tcomment_vim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-commentary'
 Plugin 'SirVer/ultisnips'
 Plugin 'aalvarado/ultisnips-snippets'
 Plugin 'honza/vim-snippets'
