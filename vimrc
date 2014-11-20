@@ -31,6 +31,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-fugitive'
 Plugin 'arkwright/vim-manhunt'
+Plugin 'arkwright/vim-shotput'
 Plugin 'mattn/emmet-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'wookiehangover/jshint.vim'
@@ -64,6 +65,7 @@ set ic
 " ----------------------------------------
 " syntax, highlighting and spelling
 " ----------------------------------------
+set synmaxcol=120
 
 " ----------------------------------------
 " multiple windows
