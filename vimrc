@@ -32,6 +32,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-fugitive'
 Plugin 'arkwright/vim-manhunt'
 Plugin 'arkwright/vim-shotput'
+Plugin 'arkwright/vim-whiteboard'
 Plugin 'mattn/emmet-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'wookiehangover/jshint.vim'
@@ -65,7 +66,7 @@ set ic
 " ----------------------------------------
 " syntax, highlighting and spelling
 " ----------------------------------------
-set synmaxcol=120
+au BufEnter * :set synmaxcol=120
 
 " ----------------------------------------
 " multiple windows
@@ -152,6 +153,7 @@ set softtabstop=4
 " Save views (fold state of buffers)
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
+nmap <Space> za
 
 " ----------------------------------------
 " diff mode
