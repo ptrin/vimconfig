@@ -66,7 +66,7 @@ set ic
 " ----------------------------------------
 " syntax, highlighting and spelling
 " ----------------------------------------
-au BufEnter * :set synmaxcol=120
+au BufEnter * :set synmaxcol=400
 
 " ----------------------------------------
 " multiple windows
