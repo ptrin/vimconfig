@@ -26,6 +26,7 @@ Plugin 'tmhedberg/matchit'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mileszs/ack.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'kien/ctrlp.vim'
 Plugin 'groenewege/vim-less'
@@ -146,6 +147,8 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " ----------------------------------------
 " folding

@@ -5,3 +5,25 @@ endsnippet
 snippet us
 "use strict";
 endsnippet
+
+snippet rclass
+var ${1:Component} = React.createClass({
+	render: function() {
+		return (
+			${2}
+		);
+	}
+});
+endsnippet
+
+snippet desc
+describe('${1:Suite description}', function () {
+    ${2}
+});
+endsnippet
+
+snippet it
+it('${1:Test description}', function () {
+    ${2}
+});
+endsnippet
