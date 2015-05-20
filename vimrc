@@ -15,7 +15,7 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
 
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-commentary'
 Plugin 'SirVer/ultisnips'
 Plugin 'aalvarado/ultisnips-snippets'
@@ -137,7 +137,12 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 " editing text
 " ----------------------------------------
 au InsertEnter * set isk+=-
-au InsertLeave * set isk-=- 
+au InsertLeave * set isk-=-
+
+" delimitMate config
+let delimitMate_expand_cr = 2
+let delimitMate_expand_space = 1
+let delimitMate_jump_expansion = 1
 
 " ----------------------------------------
 " tabs and indenting
@@ -147,8 +152,6 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 set softtabstop=4
-
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " ----------------------------------------
 " folding
@@ -252,4 +255,4 @@ nnoremap ,jc :JumpToCSS<CR>
 let g:jumptocss_autoclose = 1
 
 " Indent Guides configuration
-let g:indent_guides_color_change_percent = 2 
+let g:indent_guides_color_change_percent = 2
