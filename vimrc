@@ -6,14 +6,14 @@ set viminfo=%,'100,<50,s10,h
 filetype off
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "let path = '~/some/path/here'
 "call vundle#rc(path)
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.Vim'
 
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-commentary'
@@ -37,14 +37,15 @@ Plugin 'arkwright/vim-whiteboard'
 Plugin 'mattn/emmet-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'wookiehangover/jshint.vim'
+Plugin 'vimwiki/vimwiki'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/webapi-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'othree/xml.vim'
+call vundle#end()
 
 let g:jshintprg = "/usr/local/bin/jshint"
-" call pathogen#runtime_append_all_bundles()
-" call pathogen#helptags()
+
 filetype plugin indent on
 set autochdir
 set hidden
