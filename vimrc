@@ -186,7 +186,7 @@ noremap <C-TAB> :tabnext<CR>
 noremap <C-S-TAB> :tabprev<CR>
 noremap <Left> :bp!<CR>
 noremap <Right> :bn!<CR>
-map <F1> :NERDTreeToggle<CR>
+map <F1> :Vex<CR>
 command Bdall :bufdo bd
 map ,cd :cd %:p:h<CR>
 
