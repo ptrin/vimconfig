@@ -8,40 +8,52 @@ filetype off
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"let path = '~/some/path/here'
-"call vundle#rc(path)
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.Vim'
 
+" Editor features
+Plugin 'CycleColor'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-vinegar'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+
+" Git
+Plugin 'tpope/vim-fugitive'
+Plugin 'arkwright/vim-manhunt'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+
+" Misc
+Plugin 'arkwright/vim-shotput'
+Plugin 'arkwright/vim-whiteboard'
+" Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+
+" Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'aalvarado/ultisnips-snippets'
 Plugin 'honza/vim-snippets'
 Plugin 'rstacruz/vim-ultisnips-css'
-Plugin 'ptrin/JumpToCSS'
+
+" HTML
+Plugin 'othree/xml.vim'
 Plugin 'tmhedberg/matchit'
+Plugin 'mattn/emmet-vim'
+
+" CSS
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'mileszs/ack.vim'
+Plugin 'groenewege/vim-less'
+Plugin 'ptrin/JumpToCSS'
+
+" JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'kien/ctrlp.vim'
-Plugin 'groenewege/vim-less'
-Plugin 'tpope/vim-fugitive'
-Plugin 'arkwright/vim-manhunt'
-Plugin 'arkwright/vim-shotput'
-Plugin 'arkwright/vim-whiteboard'
-Plugin 'mattn/emmet-vim'
-Plugin 'mattn/gist-vim'
 Plugin 'wookiehangover/jshint.vim'
-Plugin 'vimwiki/vimwiki'
-Plugin 'scrooloose/nerdtree'
-Plugin 'mattn/webapi-vim'
-Plugin 'tpope/vim-surround'
-Plugin 'othree/xml.vim'
+
 call vundle#end()
 
 let g:jshintprg = "/usr/local/bin/jshint"
@@ -111,14 +123,13 @@ set nowrap
 set number
 au WinEnter * :setlocal number
 au WinLeave * :setlocal nonumber
-colorscheme oceandeep
+colorscheme molokai
 set cursorline
 au WinEnter * :setlocal cursorline
 au WinLeave * :setlocal nocursorline
 set lines=200
-set lines=200
 set columns=120
-set columns=120
+set linespace=2
 
 " ----------------------------------------
 " printing
