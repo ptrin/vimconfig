@@ -13,6 +13,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.Vim'
 
 " Editor features
+Plugin 'mhinz/vim-startify'
 Plugin 'CycleColor'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-commentary'
@@ -123,7 +124,8 @@ set nowrap
 set number
 au WinEnter * :setlocal number
 au WinLeave * :setlocal nonumber
-colorscheme molokai
+set background=dark
+colorscheme hybrid
 set cursorline
 au WinEnter * :setlocal cursorline
 au WinLeave * :setlocal nocursorline
@@ -189,6 +191,7 @@ noremap <Right> :bn!<CR>
 map <F1> :Vex<CR>
 command Bdall :bufdo bd
 map ,cd :cd %:p:h<CR>
+nmap ,e :Lex<CR>
 
 " ----------------------------------------
 " reading and writing files
