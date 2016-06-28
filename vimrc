@@ -44,6 +44,7 @@ Plugin 'rstacruz/vim-ultisnips-css'
 Plugin 'othree/xml.vim'
 Plugin 'tmhedberg/matchit'
 Plugin 'mattn/emmet-vim'
+Plugin 'mustache/vim-mustache-handlebars'
 
 " CSS
 Plugin 'hail2u/vim-css3-syntax'
