@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.Vim'
 
 " Editor features
 Plugin 'mhinz/vim-startify'
+Plugin 'kshenoy/vim-signature'
 Plugin 'CycleColor'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-commentary'
@@ -53,11 +54,8 @@ Plugin 'ptrin/JumpToCSS'
 " JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'wookiehangover/jshint.vim'
 
 call vundle#end()
-
-let g:jshintprg = "/usr/local/bin/jshint"
 
 filetype plugin indent on
 set autochdir
