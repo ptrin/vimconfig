@@ -19,6 +19,7 @@ Plugin 'CycleColor'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-repeat'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
@@ -81,6 +82,8 @@ set ic
 " syntax, highlighting and spelling
 " ----------------------------------------
 au BufEnter * :set synmaxcol=400
+autocmd BufRead,BufNewFile *.tag set filetype=jsp
+autocmd FileType jsp setlocal commentstring=<\%--\ %s\ --\%>
 
 " ----------------------------------------
 " multiple windows
@@ -245,7 +248,7 @@ let g:ackprg="/usr/local/bin/ack -H --nocolor --nogroup --column"
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_extensions = ['dir']
-let g:ctrlp_custom_ignore = '_site'
+let g:ctrlp_custom_ignore = '\v(_site|target|tomcat)'
 nmap ,f :CtrlP<CR>
 nmap ,b :CtrlPBuffer<CR>
 
@@ -270,3 +273,8 @@ let g:jumptocss_autoclose = 1
 
 " Indent Guides configuration
 let g:indent_guides_color_change_percent = 2
+
+" Startify
+let g:startify_bookmarks = ['~/dev/kijiji/kijiji.ca']
+let g:startify_change_to_dir = 1
+let g:startify_custom_header = []
