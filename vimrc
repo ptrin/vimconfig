@@ -1,6 +1,17 @@
 " ----------------------------------------
 " important
 " ----------------------------------------
+
+if has('python3')
+    command! -nargs=1 Py py3 <args>
+    set pythonthreedll=/usr/local/Frameworks/Python.framework/Versions/3.6/Python
+    set pythonthreehome=/usr/local/Frameworks/Python.framework/Versions/3.6
+else
+    command! -nargs=1 Py py <args>
+    set pythondll=/usr/local/Frameworks/Python.framework/Versions/2.7/Python
+    "set pythonhome=/usr/local/Frameworks/Python.framework/Versions/2.7
+endif
+
 set nocompatible
 set viminfo=%,'100,<50,s10,h
 filetype off
@@ -13,6 +24,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.Vim'
 
 " Editor features
+Plugin 'w0rp/ale'
 Plugin 'mhinz/vim-startify'
 Plugin 'kshenoy/vim-signature'
 Plugin 'CycleColor'
@@ -33,7 +45,7 @@ Plugin 'mattn/gist-vim'
 " Misc
 Plugin 'arkwright/vim-shotput'
 Plugin 'arkwright/vim-whiteboard'
-" Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-surround'
 
 " Snippets
@@ -83,6 +95,7 @@ set ic
 " ----------------------------------------
 au BufEnter * :set synmaxcol=400
 autocmd BufRead,BufNewFile *.tag set filetype=jsp
+autocmd BufEnter,BufRead,BufNewFile *.jss set filetype=javascript
 autocmd FileType jsp setlocal commentstring=<\%--\ %s\ --\%>
 
 " ----------------------------------------
@@ -275,6 +288,6 @@ let g:jumptocss_autoclose = 1
 let g:indent_guides_color_change_percent = 2
 
 " Startify
-let g:startify_bookmarks = ['~/dev/kijiji/kijiji.ca']
+let g:startify_bookmarks = ['~/dev/kijiji/kijiji.ca','~/dev/kijiji/kijiji.ca/box-core-db-changelog/src/main/resources/ca/kijiji/db/changelog/config/db.changelog-master.xml']
 let g:startify_change_to_dir = 1
 let g:startify_custom_header = []
